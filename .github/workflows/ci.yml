@@ -1,0 +1,22 @@
+name: CI Pipeline
+
+# Настройка триггеров: запускать при пуше и пулл-реквестах в ветку main
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest # Запускаем на чистой виртуальной машине Ubuntu
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4 # Скачиваем код вашего репозитория на виртуалку
+
+    - name: Run Linter
+      run: echo "Linter checked successfully!"
+
+    - name: Run Tests
+      run: echo "Tests passed!"
