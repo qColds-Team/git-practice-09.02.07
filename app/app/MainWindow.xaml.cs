@@ -27,7 +27,7 @@ namespace app
             {
                 result.Text = (int.Parse(x1.Text) * int.Parse(x2.Text)).ToString();
             }
-            catch { }
+            catch { } //делить на ноль нельзя
         }
     }
 }
